@@ -3,10 +3,15 @@ import styled from "styled-components";
 import littlelemonlogo from "./assets/Logo.svg";
 import navigationItems from "./data/data";
 const HEADER_STYLES = styled.header`
+  margin: 10px;
+
   nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 0 auto;
   }
+
   ul {
     display: flex;
     flex-direction: row;

@@ -26,11 +26,18 @@ ${"" /* colors */}
     margin: 0;
     padding: 0;
     font-family: var(--regularFont);
+ 
   }
 `;
 
 const LAYOUT_STYLES = styled.div`
-  background: red;
+  width: 70%;
+  margin: 0 auto;
+  height: 100vh;
+
+  main {
+    padding: 10px;
+  }
 `;
 
 function App() {

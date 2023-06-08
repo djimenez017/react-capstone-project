@@ -10,7 +10,10 @@ const FOOTER_STYLES = styled.footer`
 
   .column-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    width: 70%;
+    margin: 0 auto;
   }
 
   .column {
