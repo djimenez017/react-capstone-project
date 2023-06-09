@@ -12,7 +12,12 @@ const GlobalStyle = createGlobalStyle`
   --displayFont: 'Markazi Text', serif;
   --regularFont: 'Karla', sans-serif;
 
-  ${"" /* font sizes */}
+  ${"" /* font specs */}
+  --lineHeight: 1.5;
+  --regular: 53px,
+  --mediumFont: 14px;
+  --cardTitle: 24px;
+  --highlightText: 21px;
 
 ${"" /* colors */}
   --primary-yellow: #F4CE14;
@@ -21,12 +26,14 @@ ${"" /* colors */}
   --sec-beige: #FBDABB;
   --sec-white: #EDEFEE;
   --sec-black: #333333;
+
+  --borderRadius: 16px;
 }
   body {
     margin: 0;
     padding: 0;
     font-family: var(--regularFont);
- 
+    font-zize: 53px;
   }
 `;
 
@@ -46,7 +53,9 @@ function App() {
       <GlobalStyle />
       <Header />
       <LAYOUT_STYLES>
-        <Main>Hello there</Main>
+        <Main>
+          <p>Hello there</p>
+        </Main>
       </LAYOUT_STYLES>
       <Footer />
     </>
