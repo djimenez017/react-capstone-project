@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import littlelemonlogo from "./assets/Logo.svg";
 import navigationItems from "./data/data";
-const HEADER_STYLES = styled.header`
-  margin: 10px;
+import Icon from "./ui/icon";
+import { faBars, faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import Modal from "./ui/drawerMenu";
 
+const HEADER_STYLES = styled.header`
   nav {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
+    max-width: 1000px;
     width: 70%;
     margin: 0 auto;
+    padding: 20px;
+    -webkit-box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
+    -moz-box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
+    box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
   }
 
   ul {
@@ -24,25 +32,90 @@ const HEADER_STYLES = styled.header`
     color: var(--black);
     font-weight: bold;
   }
+
+  img {
+    width: 200px;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .mobileContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // MOBILE VUE
+  @media (max-width: 1137px) {
+    nav {
+      flex-direction: column;
+      width: 90%;
+      padding: 20px;
+    }
+
+    .mobileHide {
+      display: none;
+    }
+
+    .mobileNav {
+      display: block;
+    }
+
+    ul {
+      flex-direction: column;
+    }
+
+    .mobileContainer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    img {
+      width: 150px;
+    }
+  }
+
+  // DESKTOP VUE
+  @media (min-width: 601px) {
+    nav {
+    }
+  }
 `;
 
-const header = () => {
+const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <HEADER_STYLES>
       <nav>
-        <img src={littlelemonlogo} alt="Little Lemon Logo" />
-        <ul>
-          {navigationItems.map((link, index) => {
-            return (
-              <li key={index}>
-                <a href={link.href}>{link.name}</a>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mobileContainer">
+          <img src={littlelemonlogo} alt="Little Lemon Logo" />
+          <ul className="mobileHide">
+            {navigationItems.map((link, index) => {
+              return (
+                <li key={index}>
+                  <a href={link.href}>{link.name}</a>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="mobileNav">
+            <Icon icon={faBasketShopping} color={"#495E57"} />
+            <Icon icon={faBars} color={"#495E57"} onClick={toggleModal} />
+            {isModalOpen && <Modal closeModal={toggleModal} />}
+          </div>
+        </div>
       </nav>
     </HEADER_STYLES>
   );
 };
 
-export default header;
+export default Header;

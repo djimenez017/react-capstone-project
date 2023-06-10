@@ -1,9 +1,9 @@
-import "./App.css";
 import Header from "./components/header.js";
 import Main from "./components/main.js";
 import Footer from "./components/footer.js";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text&display=swap');
@@ -33,17 +33,25 @@ ${"" /* colors */}
     margin: 0;
     padding: 0;
     font-family: var(--regularFont);
-    font-zize: 53px;
   }
+
+
+
 `;
 
 const LAYOUT_STYLES = styled.div`
-  width: 70%;
-  margin: 0 auto;
-  height: 100vh;
-
   main {
     padding: 10px;
+  }
+
+  @media (max-width: 600px) {
+    main {
+    }
+  }
+
+  @media (min-width: 601px) {
+    main {
+    }
   }
 `;
 
