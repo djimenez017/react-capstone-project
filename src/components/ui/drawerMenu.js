@@ -5,7 +5,7 @@ import Icon from "../ui/icon";
 import styled from "styled-components";
 
 const SLIDER_STYLES = styled.div`
-.drawer-menu {
+  .drawer-menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,9 +25,10 @@ const SLIDER_STYLES = styled.div`
     padding: 50px 0;
     display: flex;
     justify-content: flex-end;
+  }
 
   .drawer-menu.open {
-    transform: translateX(100px);
+    transform: translateX(250px);
   }
 
   ul {
@@ -48,25 +49,27 @@ const SLIDER_STYLES = styled.div`
     font-weight: bold;
   }
 
-  .goright{
+  .goright {
     display: flex;
     justify-content: flex-end;
     padding: 20px;
   }
 `;
 
-const navLinks = data.map((link, index) => {
-  return (
-    <li key={index}>
-      <a href={link.href}>{link.name}</a>
-    </li>
-  );
-});
+const DrawerMenu = ({ closeModal }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const drawerMenu = ({ closeModal }) => {
+  const navLinks = data.map((link, index) => {
+    return (
+      <li key={index}>
+        <a href={link.href}>{link.name}</a>
+      </li>
+    );
+  });
+
   return (
     <SLIDER_STYLES>
-      <div className="drawer-menu">
+      <div className={`drawer-menu ${isOpen ? "open" : ""}`}>
         <div className="menu-container">
           <div className="goright">
             <Icon icon={faX} onClick={closeModal} />
@@ -78,4 +81,4 @@ const drawerMenu = ({ closeModal }) => {
   );
 };
 
-export default drawerMenu;
+export default DrawerMenu;
