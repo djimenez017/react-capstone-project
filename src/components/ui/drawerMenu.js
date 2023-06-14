@@ -59,6 +59,10 @@ const SLIDER_STYLES = styled.div`
 const DrawerMenu = ({ closeModal }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   const navLinks = data.map((link, index) => {
     return (
       <li key={index}>
