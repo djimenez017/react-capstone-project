@@ -3,7 +3,7 @@ import styled from "styled-components";
 import navigationLinks from "../components/data/data";
 
 const FOOTER_STYLES = styled.footer`
-  position: fixed;
+  position: static;
   left: 0;
   bottom: 0;
   width: 100%;

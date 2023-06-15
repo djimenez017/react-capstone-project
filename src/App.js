@@ -4,6 +4,7 @@ import Footer from "./components/footer.js";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import Homepage from "./components/sections/Homepage.js";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text&display=swap');
@@ -29,19 +30,16 @@ ${"" /* colors */}
 
   --borderRadius: 16px;
 }
+
   body {
     margin: 0;
     padding: 0;
-    font-family: var(--regularFont);
+ 
   }
-
-
-
 `;
 
 const LAYOUT_STYLES = styled.div`
   main {
-    padding: 10px;
   }
 
   @media (max-width: 600px) {
@@ -62,7 +60,7 @@ function App() {
       <Header />
       <LAYOUT_STYLES>
         <Main>
-          <p>Hello there</p>
+          <Homepage />
         </Main>
       </LAYOUT_STYLES>
       <Footer />
