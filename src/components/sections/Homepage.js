@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LiruLemon from "../assets/Mario and Adrian A.jpg";
 import Button from "../ui/Button";
+import Specials from "../ui/Specials";
 
 const HOMEPAGE_STYLES = styled.div`
   height: 100vh;
@@ -14,7 +15,7 @@ const HOMEPAGE_STYLES = styled.div`
   .heroContent {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
   }
@@ -25,6 +26,7 @@ const HOMEPAGE_STYLES = styled.div`
     flex-direction: column;
     align-content: center;
     font-family: (--displayFont);
+    width: 422px;
   }
 
   .HeroText h1 {
@@ -39,6 +41,24 @@ const HOMEPAGE_STYLES = styled.div`
 
   img {
     width: 375px;
+  }
+
+  @media (max-width: 600px) {
+    .heroContent {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    img {
+      width: 300px;
+    }
+
+    .HeroText {
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 601px) {
   }
 `;
 
@@ -55,11 +75,12 @@ const Homepage = () => {
               unde soluta inventore ipsam perspiciatis rerum.
             </p>
             <Button>Reserve a Table</Button>
+            <br />
           </div>
-
           <img src={LiruLemon} alt="Little Lemon" />
         </div>
       </div>
+      <Specials />
     </HOMEPAGE_STYLES>
   );
 };

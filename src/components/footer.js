@@ -11,7 +11,6 @@ const FOOTER_STYLES = styled.footer`
   .column-container {
     display: flex;
     justify-content: space-evenly;
-
     width: 70%;
     margin: 0 auto;
   }
@@ -33,6 +32,15 @@ const FOOTER_STYLES = styled.footer`
   }
 
   li {
+  }
+
+  @media (max-width: 600px) {
+    .column-container {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 601px) {
   }
 `;
 
