@@ -3,25 +3,59 @@ import styled from "styled-components";
 import GreekSaladImage from "../assets/greek salad.jpg";
 import BruchettaImage from "../assets/bruchetta.svg";
 import LemonDessertImage from "../assets/lemon dessert.jpg";
+import Icon from "./icon";
+import { faMotorcycle } from "@fortawesome/free-solid-svg-icons";
 
 const CARD_STYLES = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 95%;
-  max-width: 1000px;
-  margin: 0 auto;
-
-  .cardContainter {
+  .singleCard {
     background: red;
-    margin: 10px;
-    padding: 10px;
+    width: 300px;
+    height: 430px;
+    background: var(--primary-green);
+    color: var(--sec-white);
+    margin: 10px 0;
+    border-top-right-radius: var(--borderRadius);
+    border-top-left-radius: var(--borderRadius);
+  }
+
+  img {
+    width: 300px;
+    height: 200px;
+    border-top-right-radius: var(--borderRadius);
+    border-top-left-radius: var(--borderRadius);
+  }
+
+  .plateText {
+    padding: 0 20px;
+  }
+
+  .plateTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price {
+    color: var(--primary-yellow);
+    font-weight: bold;
+  }
+
+  h4 {
+    margin: 0;
   }
 
   @media (max-width: 600px) {
+    .singleCard {
+      width: 350px;
+    }
+
+    img {
+      width: 350px;
+      height: 200px;
+    }
   }
 
   @media (min-width: 601px) {
-    flex-direction: column;
   }
 `;
 
@@ -41,11 +75,19 @@ const Card = ({ name, price, description, src }) => {
 
   return (
     <CARD_STYLES>
-      <div className="cardContainter">
+      <div className="singleCard">
         <img src={getImageByURL(src)} alt={name} />
-        <h4>{name}</h4>
-        <p>${price}</p>
-        <p>{description}</p>
+        <div className="plateText">
+          <div className="plateTitle">
+            <h4>{name}</h4>
+            <p className="price">${price}</p>
+          </div>
+          <div className="plateDescription">
+            <p>{description}</p>
+          </div>
+          Order a delivery
+          <Icon icon={faMotorcycle} size={"sm"} />
+        </div>
       </div>
     </CARD_STYLES>
   );

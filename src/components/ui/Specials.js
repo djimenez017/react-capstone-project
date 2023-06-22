@@ -14,19 +14,28 @@ const SPECIAL_STYLES = styled.div`
   .specialContainer {
     display: flex;
     justify-content: space-between;
-    width: 95%;
     max-width: 1000px;
-
     padding: 60px 0;
   }
 
   .cardContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   h2 {
     margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .cardContainer {
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 601px) {
   }
 `;
 
@@ -42,6 +51,7 @@ const Specials = () => {
       />
     );
   });
+
   return (
     <SPECIAL_STYLES>
       <div className="specialContainer">

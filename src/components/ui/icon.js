@@ -6,7 +6,7 @@ const icon = (props) => {
   return (
     <FontAwesomeIcon
       icon={props.icon}
-      size="2x"
+      size={props.size || "2xl"}
       color={props.color}
       style={{ paddingLeft: "20px" }}
       onClick={props.onClick}
