@@ -4,9 +4,9 @@ import navigationLinks from "../components/data/data";
 
 const FOOTER_STYLES = styled.footer`
   position: static;
-  left: 0;
   bottom: 0;
   width: 100%;
+  background: var(--primary-green);
 
   .column-container {
     display: flex;

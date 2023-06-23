@@ -18,7 +18,7 @@ const CARD_STYLES = styled.div`
     border-top-left-radius: var(--borderRadius);
   }
 
-  img {
+  .cardImg {
     width: 300px;
     height: 200px;
     border-top-right-radius: var(--borderRadius);
@@ -44,12 +44,16 @@ const CARD_STYLES = styled.div`
     margin: 0;
   }
 
+  .delivery {
+    color: var(--primary-yellow);
+  }
+
   @media (max-width: 600px) {
     .singleCard {
       width: 350px;
     }
 
-    img {
+    .cardImg {
       width: 350px;
       height: 200px;
     }
@@ -76,7 +80,7 @@ const Card = ({ name, price, description, src }) => {
   return (
     <CARD_STYLES>
       <div className="singleCard">
-        <img src={getImageByURL(src)} alt={name} />
+        <img className="cardImg" src={getImageByURL(src)} alt={name} />
         <div className="plateText">
           <div className="plateTitle">
             <h4>{name}</h4>
@@ -85,8 +89,10 @@ const Card = ({ name, price, description, src }) => {
           <div className="plateDescription">
             <p>{description}</p>
           </div>
-          Order a delivery
-          <Icon icon={faMotorcycle} size={"sm"} />
+          <div className="delivery">
+            Order a delivery
+            <Icon icon={faMotorcycle} size={"sm"} />
+          </div>
         </div>
       </div>
     </CARD_STYLES>

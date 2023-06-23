@@ -22,6 +22,7 @@ const SPECIAL_STYLES = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   h2 {
