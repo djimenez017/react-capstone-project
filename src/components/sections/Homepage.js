@@ -3,6 +3,7 @@ import styled from "styled-components";
 import LiruLemon from "../assets/Mario and Adrian A.jpg";
 import Button from "../ui/Button";
 import Specials from "../ui/Specials";
+import Testimonials from "../ui/Testimonials";
 
 const HOMEPAGE_STYLES = styled.div`
   height: 100vh;
@@ -81,6 +82,7 @@ const Homepage = () => {
         </div>
       </div>
       <Specials />
+      <Testimonials></Testimonials>
     </HOMEPAGE_STYLES>
   );
 };
