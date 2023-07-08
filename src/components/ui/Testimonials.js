@@ -1,5 +1,18 @@
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
+import styled from "styled-components";
+
+const TestimonialStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+  }
+`;
 
 const restaurant_reviews = [
   {
@@ -46,10 +59,10 @@ const Testimonials = () => {
   });
 
   return (
-    <div>
+    <TestimonialStyles>
       <h2>Testimonials</h2>
-      {reviewCards}
-    </div>
+      <div className="row">{reviewCards}</div>
+    </TestimonialStyles>
   );
 };
 
