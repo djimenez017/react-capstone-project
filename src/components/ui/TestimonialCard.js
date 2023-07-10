@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const TestimonialCardStyles = styled.div`
   background: var(--sec-white);
-  width: 200px;
+  width: 250px;
   height: 175px;
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,7 @@ const TestimonialCardStyles = styled.div`
   padding: 15px;
   margin: 0 auto;
 
-  img {
+  .Image {
     border-radius: 50%;
     width: 60px;
   }
@@ -42,12 +42,11 @@ const TestimonialCardStyles = styled.div`
 `;
 
 const TestimonialCard = ({ name, image_url, rating, text }) => {
-  console.log(image_url);
   return (
     <TestimonialCardStyles>
       <h3>{rating}</h3>
       <div className="imageName">
-        <img src={image_url} alt={name} />
+        <img src={image_url} alt={name} className="Image" />
         <h4>{name}</h4>
       </div>
       <p>{text}</p>

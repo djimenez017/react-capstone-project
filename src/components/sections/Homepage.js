@@ -4,6 +4,7 @@ import LiruLemon from "../assets/Mario and Adrian A.jpg";
 import Button from "../ui/Button";
 import Specials from "../ui/Specials";
 import Testimonials from "../ui/Testimonials";
+import LittleLemon from "../ui/LittleLemon";
 
 const HOMEPAGE_STYLES = styled.div`
   height: 100vh;
@@ -82,7 +83,8 @@ const Homepage = () => {
         </div>
       </div>
       <Specials />
-      <Testimonials></Testimonials>
+      <Testimonials />
+      <LittleLemon />
     </HOMEPAGE_STYLES>
   );
 };
