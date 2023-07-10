@@ -3,21 +3,49 @@ import styled from "styled-components";
 
 const TestimonialCardStyles = styled.div`
   background: var(--sec-white);
-  margin: 20px;
+  width: 200px;
+  height: 175px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 15px;
+  margin: 0 auto;
+
   img {
-    width: 70px;
     border-radius: 50%;
+    width: 60px;
   }
 
   .imageName {
     display: flex;
   }
+
+  .imageName h4 {
+    padding-left: 5px;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    height: 200px;
+    margin: 10px;
+  }
+
+  @media (min-width: 601px) {
+  }
 `;
+
 const TestimonialCard = ({ name, image_url, rating, text }) => {
   console.log(image_url);
   return (
     <TestimonialCardStyles>
-      <p>{rating}</p>
+      <h3>{rating}</h3>
       <div className="imageName">
         <img src={image_url} alt={name} />
         <h4>{name}</h4>

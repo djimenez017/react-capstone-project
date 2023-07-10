@@ -9,13 +9,12 @@ const SPECIAL_STYLES = styled.div`
   flex-direction: column;
   width: 95%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 80px auto;
 
   .specialContainer {
     display: flex;
     justify-content: space-between;
-    max-width: 1000px;
-    padding: 60px 0;
+    padding: 0 0 60px 0;
   }
 
   .cardContainer {

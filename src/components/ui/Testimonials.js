@@ -4,17 +4,36 @@ import styled from "styled-components";
 
 const TestimonialStyles = styled.div`
   background: var(--primary-green);
+  padding: 30px;
 
   .testimonialRow {
     display: flex;
     flex-direction: column;
     width: 95%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 60px auto;
   }
 
   .row {
     display: flex;
+  }
+
+  h2 {
+    text-align: center;
+    padding-bottom: 40px;
+    margin: 0;
+    color: var(--sec-white);
+  }
+
+  @media (max-width: 600px) {
+    .row {
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 601px) {
+    flex-wrap: wrap;
   }
 `;
 
