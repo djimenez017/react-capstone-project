@@ -62,7 +62,7 @@ function App() {
           <Homepage />
         </Main>
       </LAYOUT_STYLES>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

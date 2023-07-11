@@ -4,17 +4,34 @@ import Potatoes from "../assets/restauranfood.jpg";
 
 const AboutStyles = styled.div`
   display: flex;
-  flex-direction: column;
   width: 95%;
   max-width: 1000px;
   margin: 60px auto;
+  justify-content: space-beween;
+
+  .text {
+    padding-right: 50px;
+  }
+
+  img {
+    width: 300px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    width: 90%;
+
+    img {
+      margin: 0 auto;
+    }
+  }
 `;
 
 const LittleLemon = () => {
   return (
     <AboutStyles>
       <div className="text">
-        <h3>Little Lemon</h3>
+        <h2>Little Lemon</h2>
         <h5>Chicago</h5>
         <p>
           Nestled in a quaint corner, Little Lemon is a delightful small

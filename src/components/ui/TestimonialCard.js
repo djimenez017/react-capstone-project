@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const TestimonialCardStyles = styled.div`
   background: var(--sec-white);
-  width: 250px;
+  width: 200px;
   height: 175px;
   display: flex;
   justify-content: space-between;
