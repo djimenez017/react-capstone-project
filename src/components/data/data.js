@@ -2,11 +2,11 @@
 //it will be updated in  one place rather than in multiple pages
 const navigationItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/" },
-  { name: "Menu", href: "/" },
-  { name: "Reservations", href: "/" },
-  { name: "Order Online", href: "/" },
-  { name: "Login", href: "/" },
+  { name: "About", href: "<About />" },
+  { name: "Menu", href: "<Menu />" },
+  { name: "Reservations", href: "<Reservations />" },
+  { name: "Order Online", href: "<Order />" },
+  { name: "Login", href: "<Login />" },
 ];
 
 export default navigationItems;
