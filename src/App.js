@@ -8,6 +8,7 @@ import Homepage from "./components/sections/Homepage.js";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text&display=swap');
+
 :root{
   ${"" /* fonts */}
   --displayFont: 'Markazi Text', serif;
@@ -30,27 +31,9 @@ ${"" /* colors */}
 
   --borderRadius: 16px;
 }
-
-  body {
-    margin: 0;
-    padding: 0;
-  }
 `;
 
-const LAYOUT_STYLES = styled.div`
-  main {
-  }
-
-  @media (max-width: 600px) {
-    main {
-    }
-  }
-
-  @media (min-width: 601px) {
-    main {
-    }
-  }
-`;
+const LAYOUT_STYLES = styled.div``;
 
 function App() {
   return (

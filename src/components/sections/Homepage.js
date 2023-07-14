@@ -7,9 +7,7 @@ import Testimonials from "../ui/Testimonials";
 import LittleLemon from "../ui/LittleLemon";
 
 const HOMEPAGE_STYLES = styled.div`
-  height: 100vh;
   padding: 0;
-
   .heroBackground {
     background: var(--primary-green);
   }

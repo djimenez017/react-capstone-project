@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import navigationLinks from "../components/data/data";
+import LittleLemonLogo from "./assets/LittleLemonLogonbg.png";
 
 const FOOTER_STYLES = styled.footer`
-  position: static;
-  bottom: 0;
   width: 100%;
   background: var(--primary-green);
+  color: var(--sec-white);
 
   .column-container {
     display: flex;
@@ -25,18 +25,24 @@ const FOOTER_STYLES = styled.footer`
     font-weight: bold;
   }
 
+  img {
+    width: 100px;
+  }
+
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
   }
 
   li {
+    font-weight: bold;
   }
 
   @media (max-width: 600px) {
     .column-container {
       flex-direction: column;
+      width: 90%;
     }
   }
 
@@ -56,15 +62,28 @@ export const footer = () => {
   return (
     <FOOTER_STYLES>
       <div className="column-container">
-        <div className="column">Logo</div>
+        <div className="column">
+          <img src={LittleLemonLogo} alt="Litte Lemon" />
+        </div>
         <div className="column">
           Doormat Navigation <ul> {doormatNavLinks}</ul>
         </div>
         <div className="column">
-          Contact <ul> {doormatNavLinks}</ul>
+          Contact{" "}
+          <ul>
+            <li>Address</li>
+            <li>Phone Number</li>
+            <li>Email</li>
+          </ul>
         </div>
         <div className="column">
-          Social Media <ul> {doormatNavLinks}</ul>
+          Social Media{" "}
+          <ul>
+            {" "}
+            <li>Instagram</li>
+            <li>Facebook</li>
+            <li>Threads</li>
+          </ul>
         </div>
       </div>
     </FOOTER_STYLES>
