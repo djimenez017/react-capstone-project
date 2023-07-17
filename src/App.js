@@ -4,7 +4,6 @@ import Footer from "./components/footer.js";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Homepage from "./components/sections/Homepage.js";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text&display=swap');
@@ -41,9 +40,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <LAYOUT_STYLES>
-        <Main>
-          <Homepage />
-        </Main>
+        <Main></Main>
       </LAYOUT_STYLES>
       <Footer />
     </>

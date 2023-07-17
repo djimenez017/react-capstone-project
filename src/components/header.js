@@ -5,6 +5,10 @@ import navigationItems from "./data/data";
 import Icon from "./ui/icon";
 import { faBars, faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./ui/drawerMenu";
+import { Route, Routes, Link } from "react-router-dom";
+import About from "./pages/About";
+import Homepage from "./sections/Homepage";
+import Menu from "./pages/About";
 
 const HEADER_STYLES = styled.header`
   nav {
@@ -99,13 +103,22 @@ const Header = () => {
         <div className="mobileContainer">
           <img src={littlelemonlogo} alt="Little Lemon Logo" />
           <ul className="mobileHide">
-            {navigationItems.map((link, index) => {
+            {/* {navigationItems.map((link, index) => {
               return (
                 <li key={index}>
                   <a href={link.href}>{link.name}</a>
                 </li>
               );
-            })}
+            })} */}
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/About">About</Link>
+            </li>
+            <li>
+              <Link to="/Menu">Menu</Link>
+            </li>
           </ul>
           <div className="mobileNav">
             <Icon icon={faBasketShopping} color={"#495E57"} />
@@ -114,6 +127,12 @@ const Header = () => {
           </div>
         </div>
       </nav>
+
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Menu" element={<Menu />} />
+      </Routes>
     </HEADER_STYLES>
   );
 };
