@@ -8,7 +8,10 @@ import Modal from "./ui/drawerMenu";
 import { Route, Routes, Link } from "react-router-dom";
 import About from "./pages/About";
 import Homepage from "./sections/Homepage";
-import Menu from "./pages/About";
+import Menu from "./pages/Menu";
+import Reservation from "./pages/Reservation";
+import OrderOnline from "./pages/OrderOnline";
+import Login from "./pages/Login";
 
 const HEADER_STYLES = styled.header`
   nav {
@@ -119,6 +122,15 @@ const Header = () => {
             <li>
               <Link to="/Menu">Menu</Link>
             </li>
+            <li>
+              <Link to="/Reservations">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/Order-online ">Order Online </Link>
+            </li>
+            <li>
+              <Link to="/Login">Login</Link>
+            </li>
           </ul>
           <div className="mobileNav">
             <Icon icon={faBasketShopping} color={"#495E57"} />
@@ -130,8 +142,11 @@ const Header = () => {
 
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Menu" element={<Menu />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/reservations" element={<Reservation />} />
+        <Route path="/order-online" element={<OrderOnline />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </HEADER_STYLES>
   );

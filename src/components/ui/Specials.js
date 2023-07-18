@@ -40,7 +40,7 @@ const SPECIAL_STYLES = styled.div`
 `;
 
 const Specials = () => {
-  const menuSpecial = menuItems.map((item, index) => {
+  const menuSpecial = menuItems.slice(0, 3).map((item, index) => {
     return (
       <Card
         key={index}
