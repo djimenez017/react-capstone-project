@@ -16,9 +16,6 @@ const Menu_Styles = styled.div`
     color: var(--primary-yellow);
     font-size: 20px;
   }
-
-  h2 {
-  }
 `;
 
 const Menu = () => {
@@ -26,7 +23,7 @@ const Menu = () => {
     return (
       <div className="menuCard">
         <h3>{foodItem.name}</h3>
-        <p>{foodItem.price}</p>
+        <h4>{foodItem.price}</h4>
         <p>{foodItem.description}</p>
       </div>
     );

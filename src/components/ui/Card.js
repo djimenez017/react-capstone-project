@@ -84,7 +84,7 @@ const Card = ({ name, price, description, src }) => {
         <div className="plateText">
           <div className="plateTitle">
             <h4>{name}</h4>
-            <p className="price">${price}</p>
+            <p className="price">{price}</p>
           </div>
           <div className="plateDescription">
             <p>{description}</p>
