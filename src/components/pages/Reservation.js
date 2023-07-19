@@ -17,6 +17,7 @@ const FormStyles = styled.div`
     padding: 7px;
     border-radius: var(--borderRadius);
     margin: 10px 0;
+    border: solid 2px grey;
   }
 
   input[type="submit"] {
@@ -24,6 +25,10 @@ const FormStyles = styled.div`
     border: solid 1px var(--primary-yellow);
     padding: 10px;
     text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
   }
 `;
 
