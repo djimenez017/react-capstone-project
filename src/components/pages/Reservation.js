@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../ui/Layout";
 import styled from "styled-components";
 
@@ -27,22 +27,37 @@ const FormStyles = styled.div`
     text-transform: uppercase;
   }
 
+  h2 {
+    text-align: center;
+  }
+
   @media (max-width: 600px) {
     width: 90%;
   }
 `;
 
 const Reservation = () => {
+  const [reservationData, setReservationData] = useState({
+    date: "",
+    time: "17:00",
+    guests: 1,
+    occasion: "Birthday",
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Subimtted");
+  };
   return (
     <Layout>
       {" "}
-      <h2>Reservation</h2>
       <FormStyles>
+        <h2>Reservation</h2>
         <form>
-          <label for="res-date">Choose date</label>
-          <input type="date" id="res-date" />
-          <label for="res-time">Choose time</label>
-          <select id="res-time ">
+          <label htmlFor="res-date">Choose date</label>
+          <input type="date" id="res-date" value={reservationData.date} />
+          <label htmlFor="res-time">Choose time</label>
+          <select id="res-time " name="time" value={reservationData.time}>
             <option>17:00</option>
             <option>18:00</option>
             <option>19:00</option>
@@ -50,15 +65,31 @@ const Reservation = () => {
             <option>21:00</option>
             <option>22:00</option>
           </select>
-          <label for="guests">Number of guests</label>
-          <input type="number" placeholder="1" min="1" max="10" id="guests" />
-          <label for="occasion">Occasion</label>
-          <select id="occasion">
+          <label htmlFor="guests">Number of guests</label>
+          <input
+            type="number"
+            placeholder="1"
+            min="1"
+            max="10"
+            id="guests"
+            name="guests"
+            value={reservationData.guests}
+          />
+          <label htmlFor="occasion">Occasion</label>
+          <select
+            id="occasion"
+            name="occassion"
+            value={reservationData.occasion}
+          >
             <option>Birthday</option>
             <option>Anniversary</option>
           </select>
 
-          <input type="submit" value="Make Your reservation" />
+          <input
+            type="submit"
+            value="Make Your reservation"
+            onClick={handleSubmit}
+          />
         </form>
       </FormStyles>
     </Layout>

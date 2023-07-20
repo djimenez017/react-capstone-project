@@ -12,6 +12,11 @@ const Menu_Styles = styled.div`
     border-radius: var(--borderRadius);
   }
 
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
   h3 {
     color: var(--primary-yellow);
     font-size: 20px;
@@ -32,8 +37,11 @@ const Menu = () => {
   return (
     <Layout>
       {" "}
-      <h2>Little Lemon Menu</h2>
-      <Menu_Styles>{MenuItems}</Menu_Styles>
+      <Menu_Styles>
+        {" "}
+        <h2>Little Lemon Menu</h2>
+        {MenuItems}
+      </Menu_Styles>
     </Layout>
   );
 };
