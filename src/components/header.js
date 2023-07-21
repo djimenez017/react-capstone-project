@@ -9,7 +9,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import About from "./pages/About";
 import Homepage from "./sections/Homepage";
 import Menu from "./pages/Menu";
-import Reservation from "./pages/Reservation";
+import BookingPage from "./pages/BookingPage";
 import OrderOnline from "./pages/OrderOnline";
 import Login from "./pages/Login";
 
@@ -144,7 +144,7 @@ const Header = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/reservations" element={<Reservation />} />
+        <Route path="/reservations" element={<BookingPage />} />
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
       </Routes>

@@ -36,7 +36,7 @@ const FormStyles = styled.div`
   }
 `;
 
-const Reservation = () => {
+const BookingForm = () => {
   const [reservationData, setReservationData] = useState({
     date: "",
     time: "17:00",
@@ -46,18 +46,33 @@ const Reservation = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Subimtted");
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setReservationData({ ...reservationData, [name]: value });
+  };
+
   return (
     <Layout>
       {" "}
       <FormStyles>
-        <h2>Reservation</h2>
         <form>
           <label htmlFor="res-date">Choose date</label>
-          <input type="date" id="res-date" value={reservationData.date} />
+          <input
+            type="date"
+            name="date"
+            id="res-date"
+            value={reservationData.date}
+            onChange={handleChange}
+          />
           <label htmlFor="res-time">Choose time</label>
-          <select id="res-time " name="time" value={reservationData.time}>
+          <select
+            id="res-time "
+            name="time"
+            value={reservationData.time}
+            onChange={handleChange}
+          >
             <option>17:00</option>
             <option>18:00</option>
             <option>19:00</option>
@@ -74,12 +89,14 @@ const Reservation = () => {
             id="guests"
             name="guests"
             value={reservationData.guests}
+            onChange={handleChange}
           />
           <label htmlFor="occasion">Occasion</label>
           <select
             id="occasion"
             name="occassion"
             value={reservationData.occasion}
+            onChange={handleChange}
           >
             <option>Birthday</option>
             <option>Anniversary</option>
@@ -96,5 +113,5 @@ const Reservation = () => {
   );
 };
 
-export default Reservation;
+export default BookingForm;
 // display: grid; max-width: 200px; gap: 20px
