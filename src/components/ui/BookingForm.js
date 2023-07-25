@@ -36,14 +36,7 @@ const FormStyles = styled.div`
   }
 `;
 
-const BookingForm = () => {
-  const [reservationData, setReservationData] = useState({
-    date: "",
-    time: "17:00",
-    guests: 1,
-    occasion: "Birthday",
-  });
-
+const BookingForm = ({ reservationData }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -52,6 +45,8 @@ const BookingForm = () => {
     const { name, value } = e.target;
     setReservationData({ ...reservationData, [name]: value });
   };
+
+  console.log(reservationData);
 
   return (
     <Layout>

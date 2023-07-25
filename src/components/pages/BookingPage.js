@@ -8,16 +8,24 @@ const BookingPageStyles = styled.div`
 
   h2 {
     text-align: center;
+    margin: 0;
   }
 `;
 
 const BookingPage = () => {
+  const [reservationData, setReservationData] = useState({
+    date: "",
+    time: "17:00",
+    guests: 1,
+    occasion: "Birthday",
+  });
+
   return (
     <Layout>
       {" "}
       <BookingPageStyles>
         <h2>Reservation</h2>
-        <BookingForm />
+        <BookingForm reservationData />
       </BookingPageStyles>
     </Layout>
   );

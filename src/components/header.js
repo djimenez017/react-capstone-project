@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import littlelemonlogo from "./assets/Logo.svg";
-import navigationItems from "./data/data";
 import Icon from "./ui/icon";
 import { faBars, faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./ui/drawerMenu";
 import { Route, Routes, Link } from "react-router-dom";
 import About from "./pages/About";
-import Homepage from "./sections/Homepage";
+import Homepage from "./ui/Homepage";
 import Menu from "./pages/Menu";
 import BookingPage from "./pages/BookingPage";
 import OrderOnline from "./pages/OrderOnline";
@@ -106,13 +105,6 @@ const Header = () => {
         <div className="mobileContainer">
           <img src={littlelemonlogo} alt="Little Lemon Logo" />
           <ul className="mobileHide">
-            {/* {navigationItems.map((link, index) => {
-              return (
-                <li key={index}>
-                  <a href={link.href}>{link.name}</a>
-                </li>
-              );
-            })} */}
             <li>
               <Link to="/">Home</Link>
             </li>
