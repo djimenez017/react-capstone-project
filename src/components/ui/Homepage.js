@@ -8,6 +8,7 @@ import LittleLemon from "../ui/LittleLemon";
 
 const HOMEPAGE_STYLES = styled.div`
   padding: 0;
+  background: blue;
   .heroBackground {
     background: var(--primary-green);
   }

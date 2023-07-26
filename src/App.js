@@ -30,6 +30,10 @@ ${"" /* colors */}
 
   --borderRadius: 16px;
 }
+
+body{
+  box-sizing: border-box;
+}
 `;
 
 const LAYOUT_STYLES = styled.div``;

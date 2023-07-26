@@ -14,8 +14,7 @@ const CARD_STYLES = styled.div`
     background: var(--primary-green);
     color: var(--sec-white);
     margin: 10px 0;
-    border-top-right-radius: var(--borderRadius);
-    border-top-left-radius: var(--borderRadius);
+    border-radius: var(--borderRadius);
   }
 
   .cardImg {
