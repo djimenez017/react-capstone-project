@@ -43,6 +43,7 @@ const BookingForm = () => {
     guests: 1,
     occasion: "Birthday",
   });
+  
   const handleSubmit = (event) => {
     event.preventDefault();
   };
