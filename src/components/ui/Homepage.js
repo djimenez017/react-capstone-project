@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import LiruLemon from "../assets/Mario and Adrian A.jpg";
-import Button from "../ui/Button";
-import Specials from "../ui/Specials";
-import Testimonials from "../ui/Testimonials";
-import LittleLemon from "../ui/LittleLemon";
+import Button from "./Button";
+import Specials from "./Specials";
+import Testimonials from "./Testimonials";
+import LittleLemon from "./LittleLemon";
 
 const HOMEPAGE_STYLES = styled.div`
   padding: 0;
