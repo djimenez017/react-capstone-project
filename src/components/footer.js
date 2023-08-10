@@ -5,7 +5,7 @@ import LittleLemonLogo from "./assets/LittleLemonLogonbg.png";
 
 const FOOTER_STYLES = styled.footer`
   width: 100%;
-  background: red;
+  background: var(--primary-green);
   color: var(--sec-white);
   position: static;
   bottom: 0;

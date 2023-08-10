@@ -9,9 +9,8 @@ const TestimonialStyles = styled.div`
   .testimonialRow {
     display: flex;
     flex-direction: column;
-    width: 95%;
     max-width: 1000px;
-    margin: 60px auto;
+    margin: 30px auto;
   }
 
   .row {

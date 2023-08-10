@@ -31,9 +31,6 @@ const TestimonialCardStyles = styled.div`
     padding-left: 10px;
   }
 
-  p {
-  }
-
   .review {
     display: flex;
     flex-direction: row;
@@ -41,11 +38,9 @@ const TestimonialCardStyles = styled.div`
   }
 
   @media (max-width: 600px) {
+    width: 250px;
     height: 200px;
     margin: 10px;
-  }
-
-  @media (min-width: 601px) {
   }
 `;
 

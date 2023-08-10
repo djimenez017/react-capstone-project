@@ -8,9 +8,10 @@ import LittleLemon from "./LittleLemon";
 
 const HOMEPAGE_STYLES = styled.div`
   padding: 0;
-  background: blue;
+
   .heroBackground {
     background: var(--primary-green);
+    padding: 40px;
   }
 
   .heroContent {
@@ -18,7 +19,6 @@ const HOMEPAGE_STYLES = styled.div`
     justify-content: space-between;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
   }
 
   .HeroText {

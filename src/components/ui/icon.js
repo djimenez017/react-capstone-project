@@ -9,6 +9,7 @@ const icon = (props) => {
       size={props.size || "2xl"}
       color={props.color}
       onClick={props.onClick}
+      style={{ padding: props.padding || 0 }}
     />
   );
 };

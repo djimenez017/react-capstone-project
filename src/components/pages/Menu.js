@@ -4,6 +4,7 @@ import Items from "../data/menu";
 import styled from "styled-components";
 
 const Menu_Styles = styled.div`
+  height: 100vh;
   .menuCard {
     margin: 20px;
     padding: 10px 20px;
@@ -35,14 +36,11 @@ const Menu = () => {
   });
 
   return (
-    <Layout>
+    <Menu_Styles>
       {" "}
-      <Menu_Styles>
-        {" "}
-        <h2>Little Lemon Menu</h2>
-        {MenuItems}
-      </Menu_Styles>
-    </Layout>
+      <h2>Little Lemon Menu</h2>
+      {MenuItems}
+    </Menu_Styles>
   );
 };
 

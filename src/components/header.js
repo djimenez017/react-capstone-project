@@ -13,37 +13,25 @@ import OrderOnline from "./pages/OrderOnline";
 import Login from "./pages/Login";
 
 const HEADER_STYLES = styled.header`
-  background: red;
-  height: 10vh;
-
   nav {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
-
-    max-width: 1000px;
+    width: 1010px;
+    height: 80px;
     margin: 0 auto;
-    padding: 30px 0;
-    -webkit-box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
-    -moz-box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
-    box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
   }
 
   ul {
     display: flex;
-    flex-direction: row;
-    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
   }
 
   li a {
-    padding: 15px;
     text-decoration: none;
     color: var(--black);
     font-weight: bold;
-  }
-
-  img {
-    width: 250px;
+    padding: 20px;
   }
 
   .mobileNav {
@@ -51,18 +39,21 @@ const HEADER_STYLES = styled.header`
   }
 
   .mobileContainer {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
 
-  // MOBILE VUE
+  .logo {
+    width: 200px;
+  }
+
   @media (max-width: 1137px) {
     nav {
       flex-direction: column;
+      height: 60px;
       width: 90%;
-      padding: 20px;
     }
 
     .mobileHide {
@@ -79,18 +70,11 @@ const HEADER_STYLES = styled.header`
 
     .mobileContainer {
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      height: 100%;
     }
 
-    img {
+    .logo {
       width: 150px;
-    }
-  }
-
-  // DESKTOP VUE
-  @media (min-width: 601px) {
-    nav {
     }
   }
 `;
@@ -106,7 +90,7 @@ const Header = () => {
     <HEADER_STYLES>
       <nav>
         <div className="mobileContainer">
-          <img src={littlelemonlogo} alt="Little Lemon Logo" />
+          <img src={littlelemonlogo} alt="Little Lemon Logo" className="logo" />
           <ul className="mobileHide">
             <li>
               <Link to="/">Home</Link>
@@ -128,8 +112,13 @@ const Header = () => {
             </li>
           </ul>
           <div className="mobileNav">
-            <Icon icon={faBasketShopping} color={"#495E57"} />
-            <Icon icon={faBars} color={"#495E57"} onClick={toggleModal} />
+            <Icon icon={faBasketShopping} color={"#495E57"} padding="0 7px" />
+            <Icon
+              icon={faBars}
+              color={"#495E57"}
+              onClick={toggleModal}
+              padding="0 7px"
+            />
             {isModalOpen && <Modal closeModal={toggleModal} />}
           </div>
         </div>
