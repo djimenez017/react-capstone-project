@@ -13,14 +13,17 @@ import OrderOnline from "./pages/OrderOnline";
 import Login from "./pages/Login";
 
 const HEADER_STYLES = styled.header`
+  background: red;
+  height: 10vh;
+
   nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: row;
+
     max-width: 1000px;
-    width: 70%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px 0;
     -webkit-box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
     -moz-box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
     box-shadow: 0px 1px 17px 55px rgba(NaN, 73, 94, 10);
@@ -40,7 +43,7 @@ const HEADER_STYLES = styled.header`
   }
 
   img {
-    width: 200px;
+    width: 250px;
   }
 
   .mobileNav {

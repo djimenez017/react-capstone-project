@@ -7,6 +7,7 @@ const BUTTON_STYLES = styled.button`
   width: 200px;
   color: var(--sec-white);
   padding: 10px;
+  border-radius: var(--borderRadius);
 `;
 
 const Button = ({ children }) => {

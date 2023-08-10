@@ -13,13 +13,6 @@ const BookingPageStyles = styled.div`
 `;
 
 const BookingPage = () => {
-  const [reservationData, setReservationData] = useState({
-    date: "",
-    time: "17:00",
-    guests: 1,
-    occasion: "Birthday",
-  });
-
   return (
     <Layout>
       {" "}

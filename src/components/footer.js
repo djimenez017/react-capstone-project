@@ -5,12 +5,15 @@ import LittleLemonLogo from "./assets/LittleLemonLogonbg.png";
 
 const FOOTER_STYLES = styled.footer`
   width: 100%;
-  background: var(--primary-green);
+  background: red;
   color: var(--sec-white);
+  position: static;
+  bottom: 0;
 
   .column-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    max-width: 1000px;
     width: 70%;
     margin: 0 auto;
   }

@@ -36,7 +36,14 @@ const FormStyles = styled.div`
   }
 `;
 
-const BookingForm = ({ reservationData }) => {
+const BookingForm = () => {
+  const [reservationData, setReservationData] = useState({
+    date: "",
+    time: "17:00",
+    guests: 1,
+    occasion: "Birthday",
+  });
+  
   const handleSubmit = (event) => {
     event.preventDefault();
   };
