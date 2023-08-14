@@ -3,6 +3,13 @@ import data from "../data/data";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import Icon from "../ui/icon";
 import styled from "styled-components";
+import { Route, Routes, Link } from "react-router-dom";
+import About from "../pages/About";
+import Homepage from "../ui/Homepage";
+import Menu from "../pages/Menu";
+import BookingPage from "../pages/BookingPage";
+import OrderOnline from "../pages/OrderOnline";
+import Login from "../pages/Login";
 
 const SLIDER_STYLES = styled.div`
   .drawer-menu {
@@ -63,14 +70,6 @@ const DrawerMenu = ({ closeModal }) => {
     setIsOpen(!isOpen);
   };
 
-  const navLinks = data.map((link, index) => {
-    return (
-      <li key={index}>
-        <a href={link.href}>{link.name}</a>
-      </li>
-    );
-  });
-
   return (
     <SLIDER_STYLES>
       <div className={`drawer-menu ${isOpen ? "open" : ""}`}>
@@ -78,7 +77,27 @@ const DrawerMenu = ({ closeModal }) => {
           <div className="goright">
             <Icon icon={faX} onClick={closeModal} />
           </div>
-          <ul>{navLinks}</ul>
+          <ul>
+            {" "}
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/About">About</Link>
+            </li>
+            <li>
+              <Link to="/Menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/Reservations">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/Order-online ">Order Online </Link>
+            </li>
+            <li>
+              <Link to="/Login">Login</Link>
+            </li>
+          </ul>
         </div>{" "}
       </div>
     </SLIDER_STYLES>

@@ -1,12 +1,11 @@
 import React from "react";
-import Layout from "../ui/Layout";
 import Items from "../data/menu";
 import styled from "styled-components";
+import Layout from "../ui/Layout";
 
 const Menu_Styles = styled.div`
-  height: 100vh;
   .menuCard {
-    margin: 20px;
+    margin: 20px 0;
     padding: 10px 20px;
     background: var(--primary-green);
     color: var(--sec-white);
@@ -27,7 +26,7 @@ const Menu_Styles = styled.div`
 const Menu = () => {
   const MenuItems = Items.map((foodItem, index) => {
     return (
-      <div className="menuCard">
+      <div className="menuCard" key={index}>
         <h3>{foodItem.name}</h3>
         <h4>{foodItem.price}</h4>
         <p>{foodItem.description}</p>
@@ -36,11 +35,12 @@ const Menu = () => {
   });
 
   return (
-    <Menu_Styles>
-      {" "}
-      <h2>Little Lemon Menu</h2>
-      {MenuItems}
-    </Menu_Styles>
+    <Layout>
+      <Menu_Styles>
+        <h2>Little Lemon Menu</h2>
+        {MenuItems}
+      </Menu_Styles>{" "}
+    </Layout>
   );
 };
 

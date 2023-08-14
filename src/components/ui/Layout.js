@@ -5,7 +5,7 @@ const LayoutStyles = styled.div`
   width: 95%;
   max-width: 1000px;
   margin: 80px auto;
-  height: 70vh;
+  height: 100%;
 `;
 
 const Layout = (props) => {

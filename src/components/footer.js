@@ -1,7 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import navigationLinks from "../components/data/data";
 import LittleLemonLogo from "./assets/LittleLemonLogonbg.png";
+import { Route, Routes, Link } from "react-router-dom";
+import About from "./pages/About";
+import Homepage from "./ui/Homepage";
+import Menu from "./pages/Menu";
+import BookingPage from "./pages/BookingPage";
+import OrderOnline from "./pages/OrderOnline";
+import Login from "./pages/Login";
 
 const FOOTER_STYLES = styled.footer`
   width: 100%;
@@ -53,14 +59,6 @@ const FOOTER_STYLES = styled.footer`
   }
 `;
 
-const doormatNavLinks = navigationLinks.map((link, index) => {
-  return (
-    <li key={index}>
-      <a href={link.href}>{link.name}</a>
-    </li>
-  );
-});
-
 export const footer = () => {
   return (
     <FOOTER_STYLES>
@@ -69,7 +67,28 @@ export const footer = () => {
           <img src={LittleLemonLogo} alt="Litte Lemon" />
         </div>
         <div className="column">
-          Doormat Navigation <ul> {doormatNavLinks}</ul>
+          Doormat Navigation{" "}
+          <ul>
+            {" "}
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/About">About</Link>
+            </li>
+            <li>
+              <Link to="/Menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/Reservations">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/Order-online ">Order Online </Link>
+            </li>
+            <li>
+              <Link to="/Login">Login</Link>
+            </li>
+          </ul>
         </div>
         <div className="column">
           Contact{" "}
