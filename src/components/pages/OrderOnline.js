@@ -1,11 +1,14 @@
 import React from "react";
 import Layout from "../ui/Layout";
+import ComingSoon from "../ui/comingsoon";
 
 const OrderOnline = () => {
   return (
     <Layout>
-      {" "}
-      <h2>OrderOnline</h2>
+      <ComingSoon
+        word="Coming Soon"
+        text="Order here from our Little Lemon Website!"
+      />
     </Layout>
   );
 };
