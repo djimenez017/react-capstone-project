@@ -36,25 +36,22 @@ const FormStyles = styled.div`
   }
 `;
 
-const BookingForm = () => {
-  const [reservationData, setReservationData] = useState({
+const BookingForm = ({ changeAvailableTimes }) => {
+  const [formResponses, setFormResponses] = useState({
     date: "",
-    time: "17:00",
-    guests: 1,
-    occasion: "Birthday",
+    time: "",
+    guests: "",
+    occasion: "",
   });
-  
-  const handleSubmit = (event) => {
+
+  const handleChange = (event) => {
     event.preventDefault();
+    const { name, value } = event.target;
+    setFormResponses({
+      ...formResponses,
+      [name]: value,
+    });
   };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setReservationData({ ...reservationData, [name]: value });
-  };
-
-  console.log(reservationData);
-
   return (
     <Layout>
       {" "}
@@ -65,14 +62,14 @@ const BookingForm = () => {
             type="date"
             name="date"
             id="res-date"
-            value={reservationData.date}
+            value={formResponses.date}
             onChange={handleChange}
           />
           <label htmlFor="res-time">Choose time</label>
           <select
             id="res-time "
             name="time"
-            value={reservationData.time}
+            value={formResponses.time}
             onChange={handleChange}
           >
             <option>17:00</option>
@@ -90,14 +87,14 @@ const BookingForm = () => {
             max="10"
             id="guests"
             name="guests"
-            value={reservationData.guests}
+            value={formResponses.guests}
             onChange={handleChange}
           />
           <label htmlFor="occasion">Occasion</label>
           <select
             id="occasion"
             name="occassion"
-            value={reservationData.occasion}
+            value={formResponses.occasion}
             onChange={handleChange}
           >
             <option>Birthday</option>
@@ -107,7 +104,7 @@ const BookingForm = () => {
           <input
             type="submit"
             value="Make Your reservation"
-            onClick={handleSubmit}
+            onClick={() => changeAvailableTimes(handleChange)}
           />
         </form>
       </FormStyles>
@@ -116,4 +113,3 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
-// display: grid; max-width: 200px; gap: 20px
