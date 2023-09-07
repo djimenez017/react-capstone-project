@@ -40,8 +40,8 @@ const BookingForm = ({ changeAvailableTimes }) => {
   const [formResponses, setFormResponses] = useState({
     date: "",
     time: "",
-    guests: "",
-    occasion: "",
+    guests: 1,
+    occassion: "Birthday",
   });
 
   const handleChange = (event) => {
@@ -51,6 +51,11 @@ const BookingForm = ({ changeAvailableTimes }) => {
       ...formResponses,
       [name]: value,
     });
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log(formResponses);
   };
   return (
     <Layout>
@@ -104,7 +109,7 @@ const BookingForm = ({ changeAvailableTimes }) => {
           <input
             type="submit"
             value="Make Your reservation"
-            onClick={() => changeAvailableTimes(handleChange)}
+            onClick={submitHandler}
           />
         </form>
       </FormStyles>

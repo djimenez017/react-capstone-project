@@ -13,23 +13,12 @@ const BookingPageStyles = styled.div`
 `;
 
 const BookingPage = () => {
-  const [availableTimes, setAvailableTimes] = useState({
-    date: "",
-    time: "17:00",
-    guests: 1,
-    occasion: "Birthday",
-  });
-
   return (
     <Layout>
       {" "}
       <BookingPageStyles>
         <h2>Reservation</h2>
-        <BookingForm
-          changeAvailableTimes={(availableTimes) =>
-            setAvailableTimes(availableTimes)
-          }
-        />
+        <BookingForm />
       </BookingPageStyles>
     </Layout>
   );
