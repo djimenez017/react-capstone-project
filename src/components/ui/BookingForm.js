@@ -65,7 +65,6 @@ const BookingForm = ({ changeAvailableTimes }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(formResponses);
     localStorage.setItem("date", formResponses.date);
     localStorage.setItem("time", formResponses.time);
     localStorage.setItem("guests", formResponses.guests);
