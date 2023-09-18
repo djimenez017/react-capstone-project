@@ -31,6 +31,15 @@ const FormStyles = styled.div`
     text-align: center;
   }
 
+  .confirmation {
+    text-align: center;
+    color: var(--primary-green);
+    background: var(--primary-yellow);
+    border-radius: var(--borderRadius);
+    padding: 10px;
+    font-weight: bold;
+  }
+
   @media (max-width: 600px) {
     width: 90%;
   }
@@ -43,6 +52,7 @@ const BookingForm = ({ changeAvailableTimes }) => {
     guests: 1,
     occassion: "Birthday",
   });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -56,7 +66,13 @@ const BookingForm = ({ changeAvailableTimes }) => {
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(formResponses);
+    localStorage.setItem("date", formResponses.date);
+    localStorage.setItem("time", formResponses.time);
+    localStorage.setItem("guests", formResponses.guests);
+    localStorage.setItem("occassion", formResponses.occassion);
+    setIsFormSubmitted(true);
   };
+
   return (
     <Layout>
       {" "}
@@ -72,7 +88,7 @@ const BookingForm = ({ changeAvailableTimes }) => {
           />
           <label htmlFor="res-time">Choose time</label>
           <select
-            id="res-time "
+            id="res-time"
             name="time"
             value={formResponses.time}
             onChange={handleChange}
@@ -112,6 +128,12 @@ const BookingForm = ({ changeAvailableTimes }) => {
             onClick={submitHandler}
           />
         </form>
+        {isFormSubmitted && (
+          <p className="confirmation">
+            Thank you! Your reservation for {formResponses.guests} on{" "}
+            {formResponses.date} been successfully submitted.
+          </p>
+        )}
       </FormStyles>
     </Layout>
   );

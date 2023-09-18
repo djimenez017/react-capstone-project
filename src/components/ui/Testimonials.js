@@ -80,7 +80,9 @@ const Testimonials = () => {
     <TestimonialStyles>
       <div className="testimonialRow">
         <h2>Testimonials</h2>
-        <div className="row">{reviewCards}</div>
+        <div className="row" role="list" aria-label="Customer Reviews">
+          >{reviewCards}
+        </div>
       </div>
     </TestimonialStyles>
   );

@@ -48,6 +48,7 @@ const Specials = () => {
         price={item.price}
         description={item.description}
         src={item.url}
+        alt={`Image of ${item.name}`}
       />
     );
   });
@@ -58,7 +59,13 @@ const Specials = () => {
         <h2>Specials</h2>
         <Button>Online Menu</Button>
       </div>
-      <div className="cardContainer">{menuSpecial}</div>
+      <section
+        className="cardContainer"
+        role="region"
+        aria-label="Specials Cards"
+      >
+        {menuSpecial}
+      </section>
     </SPECIAL_STYLES>
   );
 };
